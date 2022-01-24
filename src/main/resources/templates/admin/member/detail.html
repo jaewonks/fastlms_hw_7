@@ -100,35 +100,34 @@
             <a href="list.do"> 목록 </a>
 
         </div>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>
+                        로그인 일자
+                    </th>
+                    <th>
+                        접속한 IP
+                    </th>
+                    <th>
+                        접속 UserAgent
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="x, i : ${loginHistory}">
+                    <td th:text="${i.index+1}">1</td>
+                    <td th:text="${x.loginDt}"></td>
+                    <td th:text="${x.ip}">127.0.0.1</td>
+                    <td th:text="${x.userAgent}">chrome</td>
+                </tr>
+                </tbody>
 
+            </table>
+        </div>
 
-    </div>
-    <div th:with ="seq=1">
-        <table>
-            <thead>
-            <tr>
-                <th>NO</th>
-                <th>
-                    로그인 일자
-                </th>
-                <th>
-                    접속한 IP
-                </th>
-                <th>
-                    접속 UserAgent
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="x : ${loginHistory}">
-                <td th:text="${seq}">1</td>
-                <td th:text="${x.loginDt}"></td>
-                <td th:text="${x.ip}">127.0.0.1</td>
-                <td th:text="${x.userAgent}">chrome</td>
-            </tr>
-            </tbody>
-            {seq}++
-        </table>
     </div>
 
 </body>

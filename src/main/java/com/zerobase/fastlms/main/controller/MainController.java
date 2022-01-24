@@ -26,8 +26,6 @@ public class MainController {
         
         String userAgent = RequestUtils.getUserAgent(request);
         String clientIp = RequestUtils.getClientIP(request);
-        System.out.printf("유저 에이전트:" + userAgent);
-        System.out.printf("클라이언트:" + clientIp);
 
         log.info(userAgent);
         log.info(clientIp);

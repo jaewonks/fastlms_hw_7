@@ -18,7 +18,6 @@ public class LoginHistoryServiceImpl implements LoginHistoryService {
 
     private final LoginHistoryRepository loginHistoryRepository;
 
-
     @Override
     public List<LoginHistory> getLoginHistory(String userId) {
 
@@ -36,6 +35,8 @@ public class LoginHistoryServiceImpl implements LoginHistoryService {
 
     @Override
     public boolean insertLoginHistory(HttpServletRequest request, String userName) {
+
+        System.out.println("userName" + userName);
 
         LoginHistory loginHistory = LoginHistory.builder()
                 .loginDt(LocalDateTime.now())

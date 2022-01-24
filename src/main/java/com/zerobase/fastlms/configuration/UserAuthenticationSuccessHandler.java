@@ -1,7 +1,6 @@
 package com.zerobase.fastlms.configuration;
 
         import com.zerobase.fastlms.member.service.LoginHistoryService;
-        import lombok.RequiredArgsConstructor;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.security.core.Authentication;
         import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,7 +23,7 @@ public class UserAuthenticationSuccessHandler extends SavedRequestAwareAuthentic
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
         String userName= userDetails.getUsername();
-        loginHistoryService.insertLoginHistory(request,userName);
+        loginHistoryService.insertLoginHistory(request, userName);
         response.sendRedirect("/");
     }
 

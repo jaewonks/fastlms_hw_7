@@ -21,11 +21,8 @@ public class LoginHistory {
     private Long seq;
 
     private String userId;
-
     private LocalDateTime loginDt;
-
     private String ip;
-
     private String userAgent;
 }
 

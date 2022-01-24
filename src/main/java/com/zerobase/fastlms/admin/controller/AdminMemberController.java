@@ -52,6 +52,7 @@ public class AdminMemberController extends BaseController {
         List<LoginHistory> loginHistoryList = loginHistoryService.getLoginHistory(parameter.getUserId());
 
         model.addAttribute("member", member);
+        model.addAttribute("loginHistory", loginHistoryList);
 
         return "admin/member/detail";
     }
